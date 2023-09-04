@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Recommendation System</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      background-image: url('https://repository-images.githubusercontent.com/275336521/20d38e00-6634-11eb-9d1f-6a5232d0f84f');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: 'Arimo', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .login {
+      background-color: rgba(65, 61, 61, 0.8); /* Change the alpha value for transparency */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      text-align: center;
+    }
+    
+    .login h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    
+    .login form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #c0b9b9;
+      border-radius: 3px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      background-color: rgba(255, 255, 255, 0.5); /* Change the alpha value for transparency */
+    }
+    
+    .login form button {
+      width: 100%;
+      background-color: rgba(52, 152, 219, 0.8); /* Change the alpha value for transparency */
+      border: none;
+      padding: 10px;
+      color: #968f8f;
+      font-size: 16px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    .login form button:hover {
+      background-color: rgba(41, 128, 185, 0.8); /* Change the alpha value for transparency */
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h1>Movie Recommendation System</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="movie_name" placeholder="enter the movie name" required="required">
+      <button type="submit" class="btn btn-primary btn-block btn-large">Recommendations</button>
+    </form>
+    <br>
+    <br>
+    {{ prediction }}
+  </div>
+</body>
+</html>
