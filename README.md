@@ -1,5 +1,11 @@
 # End to end MOVIE-RECOMMENDER-Project
 
+## Docker pull
+```bash
+docker pull ghcr.io/shivamranaaa/movie-recommender-cicd:main
+```
+
+
 # How to run?
 ### STEPS:
 
